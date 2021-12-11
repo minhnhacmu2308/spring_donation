@@ -30,7 +30,19 @@
     <header th:replace="public/fragments :: header_menu" class="site-navbar mt-3">
 
     </header>
+    <div th:if="${msg_register_success}" class="toast" data-delay="1000" style="position:fixed; top: 100PX; left: 40PX;z-index: 2000;width: 300px">
 
+        <script>
+            swal({
+                title: 'Login Successfully!',
+                /* text: 'Redirecting...', */
+                icon: 'success',
+                timer: 3000,
+                buttons: true,
+                type: 'success'
+            })
+        </script>
+    </div>
     <!-- HOME -->
     <section class="home-section section-hero overlay bg-image" style="background-image: url('https://png.pngtree.com/thumb_back/fh260/back_our/20190628/ourmid/pngtree-sanitation-workers--day-psd-background-material-image_279853.jpg');" id="home-section">
 

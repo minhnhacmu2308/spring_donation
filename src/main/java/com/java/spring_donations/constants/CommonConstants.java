@@ -30,13 +30,15 @@ public class CommonConstants {
 
     public static final String SESSION_ADMIN = "admin";
 
-    public static final String MY_EMAIL = "websitedoan@gmail.com";
+    public static final String MY_EMAIL = "nguyenminhnhacmu@gmail.com";
 
     // Replace password!!
-    public static final String MY_PASSWORD = "passnhutren123";
+    public static final String MY_PASSWORD = "0379572434Nh";
 
     public static final String CONFIRM_ACCOUNT = "confirm_account";
     public static final String CONFIRM_AWAIT = "confirm_await";
 
     public static final String SUCCESS = "success";
+
+    public static final String FOGOT_ERROR = "forgot_error";
 }
