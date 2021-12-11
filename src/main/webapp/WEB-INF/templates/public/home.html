@@ -89,10 +89,67 @@
         </a>
 
     </section>
+    <section class="site-section">
+        <div class="container">
 
+            <div class="row mb-5 justify-content-center">
+                <div class="col-md-7 text-center">
+                    <h2 class="section-title mb-2" >Our Services</h2>
+                </div>
+            </div>
 
+            <ul class="job-listings mb-5">
+                <th:block th:if="${list.content.size() > 0}" th:each="category : ${list.content}">
+                    <li style="margin-bottom: 20px" class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center ">
+                        <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
+                            <div class="job-listing-position custom-width  mb-3 mb-sm-0" style="padding: 10px;width: 250px">
+                                <h2 th:onclick="'detailCategory(' +${category.id}+ ')'" th:text="${category.name}"></h2>
+                                <strong th:text="${category.money} + ' VND'"> </strong>
+                            </div>
+                            <div class="job-listing-location mb-3 mb-sm-0 custom-width w-10" style="padding: 10px;">
+                                Ngày bắt đầu<br>
+                                <strong th:text="${category.startDate}"></strong><br>
+                            </div>
+                            <div class="job-listing-location mb-3 mb-sm-0 custom-width w-10" style="padding: 10px;">
+                                Ngày kết thúc<br>
+                                <strong th:text="${category.endDate}"></strong><br>
+                            </div>
+                            <div class="job-listing-location mb-3 mb-sm-0 custom-width w-20" style="padding: 10px;">
+                                <span class="icon-room"></span> <span th:text="${category.organizationName}"></span>
+                                <strong th:text="${category.phoneNumber}"></strong><br>
+                            </div>
+                            <div class="job-listing-meta">
+                                <p th:onclick="'detail(' +${category.id}+ ')'"  class="btn btn-primary py-2">Book</p>
+                            </div>
+                        </div>
 
-    <h1>Home</h1>
+                    </li>
+                </th:block>
+
+            </ul>
+
+            <div class="row pagination-wrap">
+                <div class="col-md-6 text-center text-md-left mb-4 mb-md-0">
+
+                </div>
+                <div class="col-md-6 text-center text-md-right">
+                    <div class="custom-pagination ml-auto">
+                        <a th:if="${numberPage>0}" th:href="@{/(page = ${list.number - 1})}" class="prev">Prev</a>
+                        <div class="d-inline-block">
+                            <th:block th:each="recruitment,state  : ${donationList}">
+                                <a th:class="${numberPage == state.index  ? 'active' : null }" th:href="@{/(page = ${state.index})}" th:text="${state.index + 1}"></a>
+
+                            </th:block>
+                        </div>
+
+                        <a th:if="${numberPage<list.totalPages - 1}" th:href="@{/(page = ${list.number + 1})}" class="next">Next</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
 
     <footer th:replace="public/fragments :: footer"  class="site-footer">
 
