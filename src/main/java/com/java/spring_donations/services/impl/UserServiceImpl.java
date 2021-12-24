@@ -45,12 +45,22 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User checkLoginUser(String email, String password) {
-        return userRepository.checkLoginUser(email,password);
+    public User checkLoginAdmin(String email, String password) {
+        return userRepository.checkLoginAdmin(email,password);
     }
 
     @Override
     public Role findRoleById(int id) {
         return roleRepository.findRoleById(id);
+    }
+
+    @Override
+    public User findUserByUserName(String userName) {
+        return userRepository.findUserByUserName(userName);
+    }
+
+    @Override
+    public void delete(int id) {
+        userRepository.deleteById(id);
     }
 }

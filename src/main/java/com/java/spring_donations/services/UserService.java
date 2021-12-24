@@ -16,7 +16,11 @@ public interface UserService {
 
     User getUserById(int id);
 
-    User checkLoginUser(String email,String password);
+    User checkLoginAdmin(String email,String password);
 
     Role findRoleById(int id);
+
+    User findUserByUserName(String userName);
+
+    void delete(int id);
 }

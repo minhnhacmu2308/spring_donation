@@ -42,6 +42,9 @@ public class User {
     @Column(name = "status")
     private int status;
 
+    @Column(name = "created")
+    private String createdAt;
+
     @ManyToOne
     @JoinColumn(name = "role_id",referencedColumnName = "id")
     private Role role;

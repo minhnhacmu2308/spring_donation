@@ -72,6 +72,8 @@ public class UserAuthenticationController {
                     messageSource.getMessage("login_success", null, Locale.getDefault()));
             HttpSession session = request.getSession();
             session.setAttribute(CommonConstants.SESSION_USER, userLogin);
+            userLogin.setCreatedAt(java.time.LocalDate.now().toString());
+            userService.save(userLogin);
             mv = new ModelAndView("redirect:/index");
         }
         return mv;
