@@ -14,4 +14,6 @@ public interface DonationRepository extends PagingAndSortingRepository<Donation,
     Page<Donation> findAll(Pageable pageable);
 
     List<Donation> findAll();
+
+    Donation findDonationsById(int id);
 }

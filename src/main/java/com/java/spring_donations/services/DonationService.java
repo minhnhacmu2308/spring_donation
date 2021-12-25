@@ -14,4 +14,6 @@ public interface DonationService {
 
     List<Donation> findAll();
 
+    Donation findDonationsById(int id);
+
 }

@@ -24,6 +24,9 @@ public class UserDonation {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "text")
+    private String text;
+
     @Column(name = "status")
     private int status;
 

@@ -115,7 +115,7 @@
                     <li style="margin-bottom: 20px" class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center ">
                         <div class="job-listing-about d-sm-flex custom-width w-100 justify-content-between mx-4">
                             <div class="job-listing-position custom-width  mb-3 mb-sm-0" style="padding: 10px;width: 250px">
-                                <h2 th:onclick="'detailCategory(' +${category.id}+ ')'" th:text="${category.name}"></h2>
+                                <h2  th:onclick="'detail(' +${category.id}+ ')'" th:text="${category.name}"></h2>
                                 <strong th:text="${category.money} + ' VND'"> </strong>
                             </div>
                             <div class="job-listing-location mb-3 mb-sm-0 custom-width w-10" style="padding: 10px;">
@@ -130,14 +130,18 @@
                                 <span class="icon-room"></span> <span th:text="${category.organizationName}"></span>
                                 <strong th:text="${category.phoneNumber}"></strong><br>
                             </div>
-                            <div class="job-listing-meta">
-                                <p th:onclick="'detail(' +${category.id}+ ')'"  class="btn btn-primary py-2">Book</p>
-                            </div>
+
                         </div>
 
                     </li>
                 </th:block>
+                <script>
+                    function detail(id){
+                        window.location = '/donation/detail/' + id;
+                    }
 
+
+                </script>
             </ul>
 
             <div class="row pagination-wrap">
