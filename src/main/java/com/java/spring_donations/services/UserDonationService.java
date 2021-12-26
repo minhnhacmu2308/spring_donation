@@ -9,4 +9,5 @@ public interface UserDonationService {
 
     UserDonation save(UserDonation userDonation);
     List<UserDonation> findUserDonationByDonation(Donation donation);
+    UserDonation findUserDonationById(int id);
 }

@@ -1,6 +1,7 @@
 package com.java.spring_donations.services.impl;
 
 import com.java.spring_donations.domain.Donation;
+import com.java.spring_donations.domain.User;
 import com.java.spring_donations.repositorys.DonationRepository;
 import com.java.spring_donations.services.DonationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,5 +30,15 @@ public class DonationServiceImpl implements DonationService {
     @Override
     public Donation findDonationsById(int id) {
         return donationRepository.findDonationsById(id);
+    }
+
+    @Override
+    public Donation save(Donation donation) {
+        return donationRepository.save(donation);
+    }
+
+    @Override
+    public void delete(int id) {
+        donationRepository.deleteById(id);
     }
 }

@@ -109,33 +109,25 @@
             <table id="datatablesSimple">
               <thead>
               <tr style="background-color: gray !important;">
-                <th>STT</th>
                 <th>Họ tên</th>
                 <th>Email</th>
                 <th>Số điện thoại</th>
 <!--                <th>Địa chỉ</th>-->
                 <th>Tài khoản</th>
                 <th>Vai trò</th>
-                <th width="150">Trạng thái</th>
-                <th width="450">Hành động</th>
+                <th >Trạng thái</th>
+                <th >Hành động</th>
               </tr>
               </thead>
               <tfoot>
               <tr>
-                <th>STT</th>
-                <th>Họ tên</th>
-                <th>Email</th>
-                <th>Số điện thoại</th>
-                <th>Địa chỉ</th>
-                <th>Tài khoản</th>
-                <th>Vai trò</th>
+
               </tr>
               </tfoot>
               <tbody>
               <input type="hidden" th:value="${list.size()}" id="dodai" />
               <th:block th:each="user : ${list}">
                 <tr>
-                  <td th:text="${user.id}"></td>
                   <td th:text="${user.fullName}"></td>
                   <td th:text="${user.email}"></td>
                   <td th:text="${user.phoneNumber}"></td>
@@ -144,7 +136,7 @@
                   <td th:text="${user.role.roleName}"></td>
                   <td style="color: #1c7430;font-weight: bold" th:if="${user.status == 1}" >Hoạt động</td>
                   <td style="color: red;font-weight: bold" th:if="${user.status == 0}" >Đã khóa</td>
-                  <td style="display: flex;justify-content: space-between">
+                  <td style="width : 270px">
                     <button type="button" style="width: 80px" class="btn btn-success" data-bs-toggle="modal"
                             th:data-bs-target="'#idModelMail'+${user.id}">
                       Gửi
@@ -157,11 +149,11 @@
                             th:data-bs-target="'#idModelDetail'+${user.id}">
                       Chi tiết
                     </button>
-                    <button type="button" style="width: 80px" class="btn btn-danger" data-bs-toggle="modal"
+                    <button type="button" style="width: 80px" class="btn btn-danger mt-1" data-bs-toggle="modal"
                             th:data-bs-target="'#idModelDel'+${user.id}" >
                       Xóa
                     </button>
-                    <form th:if="${user.status == 1}"  th:action="@{/ql-user/lock}" method="post">
+                    <form th:if="${user.status == 1}"  th:action="@{/ql-user/lock}" method="post" style="margin-left: 85px;margin-top: -38px">
                       <input type="hidden" class="form-control" id="id" name="idUser" th:value="${user.id}">
                       <button type="submit" style="width: 80px" class="btn btn-danger" >
                         Khóa

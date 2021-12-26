@@ -11,4 +11,6 @@ public interface UserDonationRepository extends JpaRepository<UserDonation,Integ
     UserDonation save(UserDonation userDonation);
 
     List<UserDonation> findUserDonationByDonation(Donation donation);
+
+    UserDonation findUserDonationById(int id);
 }

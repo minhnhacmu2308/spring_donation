@@ -23,7 +23,7 @@
 <body class="sb-nav-fixed">
     <nav th:fragment="html_nav" class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <!-- Navbar Brand-->
-    <a class="navbar-brand ps-3" href="/admin/">MANAGE SERVICE</a>
+    <a class="navbar-brand ps-3" href="/admin/">QUẢN TRỊ</a>
     <!-- Sidebar Toggle-->
     <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
             class="fas fa-bars"></i></button>
@@ -51,14 +51,13 @@
         <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
             <div class="sb-sidenav-menu">
                 <div class="nav">
-
-                    <a class="nav-link" href="/admin/">
-                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                        Bảng điều khiển
-                    </a>
                     <a class="nav-link" href="/ql-user/index">
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         Quản lý người dùng
+                    </a>
+                    <a class="nav-link" href="/ql-donation/index">
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        Quản lý đợt quyên góp
                     </a>
 <!--                    <a class="nav-link" th:if="${session.admin.role.id == 3}" href="/admin/item">-->
 <!--                        <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>-->

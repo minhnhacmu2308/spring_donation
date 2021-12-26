@@ -50,7 +50,7 @@ public class AuthenticationController {
             session.setAttribute(CommonConstants.SESSION_ADMIN, userLogin);
             rd.addFlashAttribute(CommonConstants.MSG_REGISTER_SUCCESS,
                     messageSource.getMessage("login_success", null, Locale.getDefault()));
-            mv = new ModelAndView("redirect:/admin/index");
+            mv = new ModelAndView("redirect:/ql-donation/index");
         } else {
             mv.addObject("error","fail");
         }

@@ -65,11 +65,11 @@
     <div class="container">
       <div class="row">
         <div class="col-md-7">
-          <h1 class="text-white font-weight-bold">Profile</h1>
+          <h1 class="text-white font-weight-bold">Thông tin cá nhân</h1>
           <div class="custom-breadcrumbs">
-            <a href="/">Home</a> <span class="mx-2 slash">/</span>
-            <a th:href="${'/user/info/'}+${userInformation.id} ">profile</a> <span class="mx-2 slash">/</span>
-            <span class="text-white"><strong th:text="${userInformation.fullName}"></strong></span>
+<!--            <a href="/">Home</a> <span class="mx-2 slash">/</span>-->
+<!--            <a th:href="${'/user/info/'}+${userInformation.id} ">profile</a> <span class="mx-2 slash">/</span>-->
+<!--            <span class="text-white"><strong th:text="${userInformation.fullName}"></strong></span>-->
           </div>
         </div>
       </div>
@@ -99,7 +99,7 @@
           <div class="col-lg-8 mb-4 mb-lg-0">
             <div class="d-flex align-items-center">
               <div>
-                <h2>Infomation</h2>
+                <h2>Thông tin</h2>
               </div>
             </div>
           </div>
@@ -107,7 +107,7 @@
             <div class="row">
 
               <div class="col-6">
-                <button type="submit" class="btn btn-block btn-primary btn-md">Save </button>
+                <button type="submit" class="btn btn-block btn-primary btn-md">Lưu </button>
               </div>
             </div>
           </div>
@@ -115,27 +115,26 @@
         <div class="row mb-5">
           <div class="col-lg-12">
             <div class="p-4 p-md-5 border rounded" method="post">
-              <h3 class="text-black mb-5 border-bottom pb-2">Detail information</h3>
               <div class="form-group">
                 <label for="email">Email</label>
                 <p th:text="${userInformation.email}"></p>
                 <input type="hidden" class="form-control" style="" id="email" name="email" th:value="${userInformation.email}" placeholder="you@yourdomain.com">
               </div>
               <div class="form-group">
-                <label for="email">Username</label>
+                <label for="email">Tên người dùng</label>
                 <p th:text="${userInformation.userName}"></p>
                 <input type="hidden" class="form-control" style="" id="username" name="userName" th:value="${userInformation.userName}" placeholder="you@yourdomain.com">
               </div>
               <div class="form-group">
-                <label for="job-title">Full name</label>
+                <label for="job-title">Họ tên</label>
                 <input type="text" class="form-control" name="fullName" th:value="${userInformation.fullName}" id="job-title" placeholder="Full name">
               </div>
               <div class="form-group">
-                <label for="job-location">Address</label>
+                <label for="job-location">Địa chỉ</label>
                 <input type="text"  name="address" th:value="${userInformation.address != null ? userInformation.address : null}" class="form-control" id="job-location" placeholder="e.g. New York">
               </div>
               <div class="form-group">
-                <label for="job-location">Phone number</label>
+                <label for="job-location">Số điện thoại</label>
                 <input type="text" name="phoneNumber" th:value="${userInformation.phoneNumber != null ? userInformation.phoneNumber : null}" class="form-control" id="job-location" placeholder="+ 84">
               </div>
 
@@ -149,7 +148,7 @@
       </form>
       <div class="row">
         <div class="col-12">
-          <a th:href="${'/user/change-password/'}+${session.user.id}" class="btn btn-block btn-primary btn-md">Change Password </a>
+          <a th:href="${'/user/change-password/'}+${session.user.id}" class="btn btn-block btn-primary btn-md">Đổi mật khẩu </a>
         </div>
 
       </div>

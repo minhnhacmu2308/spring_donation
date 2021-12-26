@@ -24,4 +24,9 @@ public class UserDonationServiceImpl implements UserDonationService {
     public List<UserDonation> findUserDonationByDonation(Donation donation) {
         return userDonationRepository.findUserDonationByDonation(donation);
     }
+
+    @Override
+    public UserDonation findUserDonationById(int id) {
+        return userDonationRepository.findUserDonationById(id);
+    }
 }

@@ -16,4 +16,7 @@ public interface DonationService {
 
     Donation findDonationsById(int id);
 
+    Donation save(Donation donation);
+
+    void delete(int id);
 }

@@ -16,4 +16,7 @@ public interface DonationRepository extends PagingAndSortingRepository<Donation,
     List<Donation> findAll();
 
     Donation findDonationsById(int id);
+
+    void deleteById(int id);
+
 }
