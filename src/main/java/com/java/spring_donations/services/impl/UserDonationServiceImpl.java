@@ -1,6 +1,7 @@
 package com.java.spring_donations.services.impl;
 
 import com.java.spring_donations.domain.Donation;
+import com.java.spring_donations.domain.User;
 import com.java.spring_donations.domain.UserDonation;
 import com.java.spring_donations.repositorys.UserDonationRepository;
 import com.java.spring_donations.services.UserDonationService;
@@ -23,6 +24,11 @@ public class UserDonationServiceImpl implements UserDonationService {
     @Override
     public List<UserDonation> findUserDonationByDonation(Donation donation) {
         return userDonationRepository.findUserDonationByDonation(donation);
+    }
+
+    @Override
+    public List<UserDonation> findUserDonationByUser(User user) {
+        return userDonationRepository.findUserDonationByUser(user);
     }
 
     @Override

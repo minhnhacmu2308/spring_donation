@@ -2,6 +2,8 @@ package com.java.spring_donations.controllers.publics;
 
 import com.java.spring_donations.constants.CommonConstants;
 import com.java.spring_donations.domain.User;
+import com.java.spring_donations.domain.UserDonation;
+import com.java.spring_donations.services.UserDonationService;
 import com.java.spring_donations.services.UserService;
 import com.java.spring_donations.utils.EncrytedPasswordUtils;
 import com.java.spring_donations.utils.MailUtil;
@@ -16,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 
@@ -24,6 +27,9 @@ import java.util.Objects;
 public class UserController {
     @Autowired
     UserService userService;
+
+    @Autowired
+    UserDonationService userDonationService;
 
     @Autowired
     MessageSource messageSource;
@@ -41,8 +47,10 @@ public class UserController {
 
         if (auth) {
             User userInformation = userService.getUserById(id);
+            List<UserDonation> userDonationList = userDonationService.findUserDonationByUser(userInformation);
             mv = new ModelAndView("public/profile");
             mv.addObject("userInformation",userInformation);
+            mv.addObject("userDonationList",userDonationList);
         } else {
             mv = new ModelAndView("redirect:/user/login");
         }
