@@ -64,4 +64,29 @@ public class DonationController {
         }
         return mv;
     }
+
+    @PostMapping("/add-home")
+    public ModelAndView addHome(@ModelAttribute("UserDonation") UserDonation userDonation,
+                            @RequestParam("idUser") int idUser, @RequestParam("idDonation") int idDonation,
+                            RedirectAttributes rd){
+        ModelAndView mv = new ModelAndView("redirect:/");
+        if (idUser != 0){
+            User user = userService.getUserById(idUser);
+            Donation donation = donationService.findDonationsById(idDonation);
+            userDonation.setUser(user);
+            userDonation.setDonation(donation);
+            userDonation.setStatus(0);
+            userDonation.setCreatedAt(java.time.LocalDate.now().toString());
+            userDonationService.save(userDonation);
+            rd.addFlashAttribute("msg", "success");
+        }else{
+            Donation donation = donationService.findDonationsById(idDonation);
+            userDonation.setDonation(donation);
+            userDonation.setStatus(0);
+            userDonation.setCreatedAt(java.time.LocalDate.now().toString());
+            userDonationService.save(userDonation);
+            rd.addFlashAttribute("msg", "success");
+        }
+        return mv;
+    }
 }
