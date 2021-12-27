@@ -119,7 +119,7 @@
                   <td  th:if="${user.status == 2}" >Hủy xác nhận</td>
                   <td style="display: flex;justify-content: space-between">
 
-                    <form th:if="${user.status == 0}"  th:action="@{/ql-donation/accept}" method="post">
+                    <form th:if="${user.status == 0}"  th:action="@{/ql-donation/accept}" method="post" style="margin-right: -35px">
                       <input type="hidden" class="form-control" id="id" name="idUD" th:value="${user.id}">
                       <input type="hidden" class="form-control" id="id" name="idDo" th:value="${user.donation.id}">
                       <input type="hidden" class="form-control" id="id" name="donationmoney" th:value="${user.money}">

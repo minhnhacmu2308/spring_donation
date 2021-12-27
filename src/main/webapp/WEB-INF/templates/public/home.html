@@ -94,11 +94,11 @@
                                 Ngày kết thúc<br>
                                 <strong th:text="${category.endDate}"></strong><br>
                             </div>
-                            <div class="job-listing-location mb-3 mb-sm-0 custom-width w-20" style="padding: 10px;">
+                            <div class="job-listing-location mb-3 mb-sm-0 custom-width w-25" style="padding: 10px;">
                                 <span class="icon-room"></span> <span th:text="${category.organizationName}"></span><br>
                                 <strong th:text="${category.phoneNumber}"></strong><br>
                             </div>
-                            <div class="job-listing-meta" >
+                            <div class="job-listing-meta custom-width w-20" >
                                 <p th:if="${category.status == 1}" style="margin-top: 20px" class="btn btn-primary py-2" data-toggle="modal" th:data-target="${'#exampleModal'}+${category.id}">Quyên góp</p>
                                 <p th:if="${category.status != 1}" style="margin-top: 20px;background-color: white !important;" class="btn py-2"><span style="color: white">Quyên góp</span></p>
                             </div>
