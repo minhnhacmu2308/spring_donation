@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 27, 2021 lúc 05:34 AM
+-- Thời gian đã tạo: Th12 29, 2021 lúc 03:29 AM
 -- Phiên bản máy phục vụ: 10.4.11-MariaDB
 -- Phiên bản PHP: 7.2.31
 
@@ -46,10 +46,8 @@ CREATE TABLE `donation` (
 --
 
 INSERT INTO `donation` (`id`, `code`, `created`, `description`, `end_date`, `money`, `name`, `organization_name`, `phone_number`, `start_date`, `status`) VALUES
-(1, 'QG001', NULL, 'Alo alo', '02/12/2021', 570000, 'Giúp đỡ trẻ em nghèo', 'Hội từ thiện', '0123456789', '01/12/2021', 1),
-(3, 'QG004', NULL, 'Alo alo', '02/12/2021', 100000, 'Giúp đỡ vùng cao', 'Hội từ thiện', '0123456789', '01/12/2021', 3),
-(4, 'QG003', NULL, 'Alo alo', '02/12/2021', 100000, 'Giúp đỡ vùng lũ', 'Hội từ thiện', '0123456789', '01/12/2021', 3),
-(19, 'CAO1', '2021-12-26', 'Hỗ trợ mùa lũ cho đồng bào miền trung', '2022-01-30', 0, 'Từ thiện lũ', 'Hội hỗ trợ mùa lũ', '0394072568', '2022-01-01', 0);
+(1, 'QG001', '2021-12-26', 'Giúp đỡ trẻ em nghèo', '2022-01-30', 0, 'Giúp đỡ trẻ em nghèo', 'Hội từ thiện', '0123456789', '2021-12-01', 1),
+(19, 'CAO1', '2021-12-26', 'Hỗ trợ mùa lũ cho đồng bào miền trung', '2022-01-30', 0, 'Từ thiện lũ lụt', 'Hội hỗ trợ mùa lũ', '0394072568', '2022-01-01', 0);
 
 -- --------------------------------------------------------
 
@@ -95,8 +93,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `address`, `email`, `full_name`, `note`, `password`, `phone_number`, `status`, `user_name`, `role_id`, `created`) VALUES
-(2, 'Khối phố 8 phường An Sơn thành phố Tam Kỳ', 'nguyencaonguyencmu@gmail.com', 'Nguyen Nguyen Cao', 'wellcome to my chanel', '66c6883a896b36c3734abccad05d84e1', '0394073759', 1, 'nguyennguyen', 1, '2021-12-27'),
-(3, 'Khối phố 8 phường An Sơn thành phố Tam Kỳ', 'admin@gmail.com', 'Quản trị', NULL, '66c6883a896b36c3734abccad05d84e1', '0394073759', 1, 'nguyennguyen', 2, '2021-12-26');
+(3, 'Khối phố 8 phường An Sơn thành phố Tam Kỳ', 'admin@gmail.com', 'Quản trị', NULL, '66c6883a896b36c3734abccad05d84e1', '0394073759', 1, 'admin', 2, '2021-12-26');
 
 -- --------------------------------------------------------
 
@@ -114,16 +111,6 @@ CREATE TABLE `user_donation` (
   `user_id` int(11) DEFAULT NULL,
   `text` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
-
---
--- Đang đổ dữ liệu cho bảng `user_donation`
---
-
-INSERT INTO `user_donation` (`id`, `created`, `money`, `name`, `status`, `donation_id`, `user_id`, `text`) VALUES
-(2, '2021-12-26', 120000, 'Nguyen Nguyen Cao', 1, 1, 2, 'ok'),
-(3, '2021-12-27', 200000, 'Minh Nhã', 1, 1, NULL, '\r\n                  ok'),
-(4, '2021-12-27', 50000, 'Minh Huy', 1, 1, NULL, '\r\n                         Cảm ơn                       '),
-(5, '2021-12-27', 50000, 'Quang Huy', 0, 1, NULL, '\r\n                                                ok');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -164,7 +151,7 @@ ALTER TABLE `user_donation`
 -- AUTO_INCREMENT cho bảng `donation`
 --
 ALTER TABLE `donation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT cho bảng `role`
@@ -176,13 +163,13 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `user_donation`
 --
 ALTER TABLE `user_donation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

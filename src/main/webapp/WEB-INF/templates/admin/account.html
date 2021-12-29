@@ -47,7 +47,7 @@
                           <label for="addname"
                                  class="col-form-label">Name:</label>
                           <input type="text" class="form-control"
-                                 id="addname" name="name" required>
+                                 id="addname" name="fullName" required>
                         </div>
                         <div class="col-6">
                           <label for="addcost"
@@ -240,7 +240,9 @@
                                 <h5>Số điện thoại:</h5> <p th:text="${user.phoneNumber}" ></p>
                                 <h5>Tài khoản:</h5> <p th:text="${user.userName}" ></p></div>
                               <div class="col-6">   <h5>Địa chỉ :</h5> <p th:text="${user.address}" ></p>
-                                <h5>Vai trò:</h5> <p th:text="${user.role.roleName}" ></p> <h5>Note:</h5> <p th:text="${user.note}" ></p></div>
+                                <h5>Vai trò:</h5> <p th:text="${user.role.roleName}" ></p>
+                                <h5>Lần đăng nhập gần nhất:</h5> <p th:text="${user.createdAt}" ></p>
+                                <h5>Note:</h5> <p th:text="${user.note}" ></p></div>
 
                             </div>
 

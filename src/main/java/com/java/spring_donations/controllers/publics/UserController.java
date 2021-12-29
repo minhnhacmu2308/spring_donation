@@ -163,19 +163,7 @@ public class UserController {
         if (user != null){
             String link = "http://localhost:8080/user/forgot-password/" + user.getId();
             String html = "<div  class=\"container-fluid\" style=\"text-align: center\">\n" +
-                    "    <p style=\"font-size: 20px;font-weight: bold;color: #aaa;margin-top: 10px\">Forgot password</p>\n" +
-                    "    <div style=\"width: 600px;height: 400px;border-radius: 5px;\n" +
-                    "    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 10px;margin: 20px auto;padding: 15px\">\n" +
-                    "        <p style=\"line-height: 35px;font-size: 16px\">Xin chào, <span style=\"font-weight: bold;color: black\" >"+user.getFullName()+"</span><br>\n" +
-                    "        <div style=\"height: 50px ;width: 100px;background-color: #7d90f6;\n" +
-                    "            border-radius: 5px;line-height:50px;padding-left:50px;margin: 10px auto;display: flex\">\n" +
-                    "            <a href="+link+" style=\"color: white;text-decoration: none\">Here</a>\n" +
-                    "        </div>\n" +
-                    "\n" +
-                    "        <p>Contact WorkCV:<br></p>\n" +
-                    "            - Phone number:<span style=\"color:#5f80ec\">(024) 6680 5588</span><br>\n" +
-                    "            - Email: <a href=\"#\" style=\"color:#5f80ec\"> hotro@workcv.vn</a>\n" +
-                    "    </div>\n" +
+                    "    <p style=\"font-size: 20px;font-weight: bold;color: #aaa;margin-top: 10px\">Click <a href="+link+" style=\\\"color: white;text-decoration: none\\\">Here</a> to reset password</p>\n" +
                     "</div>";
 
             try {

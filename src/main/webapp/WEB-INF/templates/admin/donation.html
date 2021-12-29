@@ -109,6 +109,7 @@
                 <th>Ngày bắt đầu</th>
                 <th>Ngày kết thúc</th>
                 <th>Tổ chức</th>
+                <th>Số điện thoại</th>
                 <th>Tổng tiền</th>
                 <th >Trạng thái</th>
                 <th style="width: 220px ">Hành động</th>
@@ -128,6 +129,7 @@
                   <td th:text="${user.startDate}"></td>
                   <td th:text="${user.endDate}"></td>
                   <td th:text="${user.organizationName}"></td>
+                  <td th:text="${user.phoneNumber}"></td>
                   <td th:text="${user.money} + ' VND'"></td>
                   <td  th:if="${user.status == 0}" >Mới tạo</td>
                   <td  th:if="${user.status == 1}" >Đang quyên góp</td>
